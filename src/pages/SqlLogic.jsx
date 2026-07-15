@@ -10,7 +10,7 @@ export default function SqlLogic() {
       <PageHeader
         eyebrow="The query layer"
         title="SQL Logic Showcase"
-        subtitle="Every chart in this app is backed by a query like the ones below, using multiple CTEs, window functions, conditional funnels, and CASE logic. Run the same queries against the simulated data and the figures match exactly."
+        subtitle="The charts in this app are built from data queries that organize customer activity, track changes over time, and show where people drop off during the buying process. The examples below show how that works behind the scenes."
       />
 
       <div className="glass rounded-2xl p-6 mb-6">
