@@ -14,7 +14,7 @@ const NAV = [
 
 export default function Sidebar({ onHome }) {
   return (
-    <aside className="w-60 shrink-0 h-screen sticky top-0 border-r border-border bg-sidebar/60 backdrop-blur-xl flex flex-col">
+    <aside className="hidden lg:flex w-60 shrink-0 h-screen sticky top-0 border-r border-border bg-sidebar/60 backdrop-blur-xl flex-col">
       <button onClick={onHome} className="flex items-center gap-2.5 px-5 py-5 text-left group">
         <div className="h-9 w-9 rounded-xl bg-gradient-to-br from-primary to-chart-2 flex items-center justify-center shadow-lg shadow-primary/30">
           <span className="font-heading font-extrabold text-[13px] leading-none text-white italic tracking-tight">R/R</span>

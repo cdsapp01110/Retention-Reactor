@@ -18,10 +18,10 @@ const LIMITATIONS = [
 
 export default function Recommendations() {
   const { data, isLoading } = useAnalyticsQuery();
-  if (isLoading || !data) return <div className="p-8"><PageHeader eyebrow="Module 05" title="Action Plan" /><Skeleton /></div>;
+  if (isLoading || !data) return <div className="p-4 sm:p-6 lg:p-8"><PageHeader eyebrow="Module 05" title="Action Plan" /><Skeleton /></div>;
 
   return (
-    <div className="p-8 max-w-6xl mx-auto animate-fade-in">
+    <div className="p-4 sm:p-6 lg:p-8 max-w-6xl mx-auto animate-fade-in">
       <PageHeader
         eyebrow="Module 05 · Recommendations engine"
         title="Evidence-based action plan"

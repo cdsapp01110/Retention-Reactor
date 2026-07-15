@@ -7,7 +7,7 @@ import { DollarSign, Receipt, Percent, TrendingDown } from 'lucide-react';
 
 export default function RevenueLab() {
   const { data, isLoading } = useAnalyticsQuery();
-  if (isLoading || !data) return <div className="p-8"><PageHeader eyebrow="Module 03" title="Revenue & Discount Lab" /><Skeleton /></div>;
+  if (isLoading || !data) return <div className="p-4 sm:p-6 lg:p-8"><PageHeader eyebrow="Module 03" title="Revenue & Discount Lab" /><Skeleton /></div>;
   const k = data.kpis;
   const d = data.discountImpact;
   const marginDelta = (d.fullPrice.marginPct - d.discount.marginPct).toFixed(1);
@@ -15,7 +15,7 @@ export default function RevenueLab() {
   const channelColors = ['hsl(var(--chart-1))','hsl(var(--chart-2))','hsl(var(--chart-3))','hsl(var(--chart-4))','hsl(var(--chart-5))'];
 
   return (
-    <div className="p-8 max-w-7xl mx-auto animate-fade-in">
+    <div className="p-4 sm:p-6 lg:p-8 max-w-7xl mx-auto animate-fade-in">
       <PageHeader
         eyebrow="Module 03 · Revenue & discount impact"
         title="Revenue & Discount Lab"

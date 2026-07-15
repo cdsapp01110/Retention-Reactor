@@ -27,7 +27,7 @@ function CompareBars({ rows, metricLabel = 'End-to-end conversion', valueKey = '
 
 export default function FunnelLab() {
   const { data, isLoading } = useAnalyticsQuery();
-  if (isLoading || !data) return <div className="p-8"><PageHeader eyebrow="Module 02" title="Funnel Lab" /><Skeleton /></div>;
+  if (isLoading || !data) return <div className="p-4 sm:p-6 lg:p-8"><PageHeader eyebrow="Module 02" title="Funnel Lab" /><Skeleton /></div>;
   const f = data.funnel;
   const mobile = f.byDevice.find(d => d.segment === 'Mobile');
   const desktop = f.byDevice.find(d => d.segment === 'Desktop');
@@ -35,7 +35,7 @@ export default function FunnelLab() {
   const dl = data.segments;
 
   return (
-    <div className="p-8 max-w-7xl mx-auto animate-fade-in">
+    <div className="p-4 sm:p-6 lg:p-8 max-w-7xl mx-auto animate-fade-in">
       <PageHeader
         eyebrow="Module 02 · Funnel drop-off"
         title="Funnel Lab"

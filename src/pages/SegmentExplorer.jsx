@@ -13,7 +13,7 @@ const DIMS = [
 export default function SegmentExplorer() {
   const { data, isLoading } = useAnalyticsQuery();
   const [dim, setDim] = useState('channel');
-  if (isLoading || !data) return <div className="p-8"><PageHeader eyebrow="Module 04" title="Segment Explorer" /><Skeleton /></div>;
+  if (isLoading || !data) return <div className="p-4 sm:p-6 lg:p-8"><PageHeader eyebrow="Module 04" title="Segment Explorer" /><Skeleton /></div>;
 
   const rows = data.segments[dim];
   const ranked = [...rows];
@@ -22,7 +22,7 @@ export default function SegmentExplorer() {
   const discRisk = ranked.find(r => r.tag === 'Discount Risk');
 
   return (
-    <div className="p-8 max-w-7xl mx-auto animate-fade-in">
+    <div className="p-4 sm:p-6 lg:p-8 max-w-7xl mx-auto animate-fade-in">
       <PageHeader
         eyebrow="Module 04 · Segment intelligence"
         title="Segment Explorer"

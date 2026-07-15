@@ -6,7 +6,7 @@ import { ChevronDown, Database, Table2 } from 'lucide-react';
 
 export default function SqlLogic() {
   return (
-    <div className="p-8 max-w-5xl mx-auto animate-fade-in">
+    <div className="p-4 sm:p-6 lg:p-8 max-w-5xl mx-auto animate-fade-in">
       <PageHeader
         eyebrow="The query layer"
         title="SQL Logic Showcase"

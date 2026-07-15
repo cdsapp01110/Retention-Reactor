@@ -27,7 +27,7 @@ export default function CohortLab() {
   const { filters } = useFilters();
   const [selected, setSelected] = useState(null);
 
-  if (isLoading || !data) return <div className="p-8"><PageHeader eyebrow="Module 01" title="Cohort Lab" /><Skeleton /></div>;
+  if (isLoading || !data) return <div className="p-4 sm:p-6 lg:p-8"><PageHeader eyebrow="Module 01" title="Cohort Lab" /><Skeleton /></div>;
 
   const cohorts = filters.granularity === 'quarter' ? bundleQuarters(data.cohorts.matrix) : data.cohorts.matrix;
   const maxPeriod = Math.max(...data.cohorts.matrix.map(c => c.values.filter(v => v).length - 1));
@@ -41,7 +41,7 @@ export default function CohortLab() {
   const cohortTypeLabel = filters.cohortType === 'first_purchase' ? 'first-purchase' : 'signup';
 
   return (
-    <div className="p-8 max-w-7xl mx-auto animate-fade-in">
+    <div className="p-4 sm:p-6 lg:p-8 max-w-7xl mx-auto animate-fade-in">
       <PageHeader
         eyebrow="Module 01 · Cohort retention"
         title="Cohort Lab"

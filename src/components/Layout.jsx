@@ -12,7 +12,7 @@ export default function Layout() {
     <div className="flex min-h-screen bg-background text-foreground">
       <Sidebar onHome={() => navigate('/')} />
       <div className="flex-1 min-w-0 flex flex-col">
-        <div className="flex items-center justify-between px-6 py-3 border-b border-border bg-background/60 backdrop-blur-xl">
+        <div className="flex items-center justify-between px-4 sm:px-6 py-3 border-b border-border bg-background/60 backdrop-blur-xl">
           <PageMenu />
           <button
             onClick={toggle}

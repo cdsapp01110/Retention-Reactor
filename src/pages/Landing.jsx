@@ -14,28 +14,28 @@ export default function Landing() {
       <div className="absolute -top-40 -right-40 h-96 w-96 rounded-full bg-primary/20 blur-[120px] pointer-events-none" />
       <div className="absolute top-1/3 -left-40 h-80 w-80 rounded-full bg-chart-2/15 blur-[120px] pointer-events-none" />
 
-      <nav className="relative flex items-center justify-between px-8 py-5">
+      <nav className="relative flex items-center justify-between px-4 sm:px-8 py-4 sm:py-5">
         <span className="font-heading font-bold tracking-tight">Retention Reactor</span>
         <PageMenu />
       </nav>
 
-      <div className="relative max-w-6xl mx-auto px-8 pt-16 pb-24">
+      <div className="relative max-w-6xl mx-auto px-4 sm:px-8 pt-10 sm:pt-16 pb-20 sm:pb-24">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-          <h1 className="font-heading text-5xl md:text-7xl font-bold tracking-tight leading-[1.02]">
+          <h1 className="font-heading text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight leading-[1.02]">
             Retention, <span className="gradient-text">decoded</span>.<br />
             Where the funnel <span className="text-muted-foreground">leaks</span>.
           </h1>
-          <p className="mt-6 text-lg text-muted-foreground max-w-2xl leading-relaxed">
+          <p className="mt-6 text-base sm:text-lg text-muted-foreground max-w-2xl leading-relaxed">
             A mock direct-to-consumer subscription brand, built as a portfolio case study. Its simulated customers span North America and skew toward urban professionals between 25 and 44. The dashboard shows which of those buyers return, where the funnel leaks, and how discounts affect revenue.
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-3">
-            <Link to="/cohorts" className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-5 py-3 rounded-xl font-medium hover:opacity-90 transition-opacity">
+            <Link to="/cohorts" className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-4 sm:px-5 py-3 rounded-xl font-medium hover:opacity-90 transition-opacity text-sm sm:text-base">
               <CalendarRange className="h-4 w-4" /> Explore Cohorts <ArrowRight className="h-4 w-4" />
             </Link>
-            <Link to="/funnel" className="inline-flex items-center gap-2 glass px-5 py-3 rounded-xl font-medium hover:bg-card/70 transition-colors">
+            <Link to="/funnel" className="inline-flex items-center gap-2 glass px-4 sm:px-5 py-3 rounded-xl font-medium hover:bg-card/70 transition-colors text-sm sm:text-base">
               <Filter className="h-4 w-4" /> See Funnel Leaks
             </Link>
-            <Link to="/sql" className="inline-flex items-center gap-2 glass px-5 py-3 rounded-xl font-medium hover:bg-card/70 transition-colors">
+            <Link to="/sql" className="inline-flex items-center gap-2 glass px-4 sm:px-5 py-3 rounded-xl font-medium hover:bg-card/70 transition-colors text-sm sm:text-base">
               <Database className="h-4 w-4" /> View SQL Logic
             </Link>
           </div>
@@ -44,7 +44,7 @@ export default function Landing() {
         <motion.div
           initial={{ opacity: 0, scale: 0.96, y: 30 }} animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ delay: 0.25, duration: 0.6 }}
-          className="mt-16 glass rounded-3xl p-6 glow-violet"
+          className="mt-12 sm:mt-16 glass rounded-3xl p-5 sm:p-6 glow-violet"
         >
           <div className="grid md:grid-cols-3 gap-4 mb-6">
             <MiniStat label="Net revenue" value={k ? fmtMoney(k.netRevenue) : '—'} sub={`${k ? fmtPct(k.marginPct) : '—'} margin`} />

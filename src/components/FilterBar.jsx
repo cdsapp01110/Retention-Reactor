@@ -31,7 +31,7 @@ export default function FilterBar() {
   const channels = data?.filterOptions?.channels || [];
   const devices = data?.filterOptions?.devices || [];
   return (
-    <div className="flex flex-wrap items-center gap-4 px-6 py-3 border-b border-border bg-background/60 backdrop-blur-xl sticky top-0 z-20">
+    <div className="flex items-center gap-4 px-4 sm:px-6 py-3 border-b border-border bg-background/60 backdrop-blur-xl sticky top-0 z-20 overflow-x-auto sm:flex-wrap sm:overflow-visible whitespace-nowrap sm:whitespace-normal">
       <Pills label="Region" value={filters.region} options={['all', ...regions]} onSelect={v => update({ region: v })} />
       <Pills label="Channel" value={filters.channel} options={['all', ...channels]} onSelect={v => update({ channel: v })} />
       <Pills label="Device" value={filters.device} options={['all', ...devices]} onSelect={v => update({ device: v })} />
@@ -40,7 +40,7 @@ export default function FilterBar() {
       <Pills label="Cohort" value={filters.cohortType} options={['signup', 'first_purchase']} onSelect={v => update({ cohortType: v })} />
       <Pills label="Mode" value={filters.mode} options={['analyst', 'executive']} onSelect={v => update({ mode: v })} />
       <Pills label="Granularity" value={filters.granularity} options={['month', 'quarter']} onSelect={v => update({ granularity: v })} />
-      <button onClick={reset} className="ml-auto inline-flex items-center gap-1.5 text-xs text-muted-foreground hover:text-foreground transition-colors">
+      <button onClick={reset} className="ml-auto sm:ml-auto inline-flex items-center gap-1.5 text-xs text-muted-foreground hover:text-foreground transition-colors shrink-0">
         <RotateCcw className="h-3.5 w-3.5" /> Reset
       </button>
     </div>

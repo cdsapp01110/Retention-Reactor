@@ -12,14 +12,14 @@ export default function Overview() {
   const { data, isLoading } = useAnalyticsQuery();
   const { filters } = useFilters();
   if (isLoading || !data) return (
-    <div className="p-8"><PageHeader eyebrow="Executive" title="Overview" /><Skeleton lines={1} /></div>
+    <div className="p-4 sm:p-6 lg:p-8"><PageHeader eyebrow="Executive" title="Overview" /><Skeleton lines={1} /></div>
   );
   const k = data.kpis;
   const exec = filters.mode === 'executive';
   const recs = data.recommendations.slice(0, 3);
 
   return (
-    <div className="p-8 max-w-7xl mx-auto animate-fade-in">
+    <div className="p-4 sm:p-6 lg:p-8 max-w-7xl mx-auto animate-fade-in">
       <PageHeader
         eyebrow={exec ? 'Executive mode' : 'Analyst mode'}
         title="Overview"
