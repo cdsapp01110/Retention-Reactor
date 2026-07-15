@@ -10,12 +10,12 @@ export default function SqlLogic() {
       <PageHeader
         eyebrow="The query layer"
         title="SQL Logic Showcase"
-        subtitle="This is a SQL-first case study. The charts you see elsewhere come from queries like these. Multiple CTEs, window functions, conditional funnels, and CASE logic. The app runs an analytics engine over the same data model, so the numbers match."
+        subtitle="The charts elsewhere derive from queries like these: multiple CTEs, window functions, conditional funnels, and CASE logic. The app runs an analytics engine over the same data model, so the numbers match."
       />
 
       <div className="glass rounded-2xl p-6 mb-6">
         <h3 className="font-heading text-lg font-semibold mb-1 flex items-center gap-2"><Database className="h-5 w-5 text-primary" /> Analytical data model</h3>
-        <p className="text-sm text-muted-foreground mb-5">A star-schema-style model: dimension tables describe the who/where/what; fact tables capture behavior and transactions.</p>
+        <p className="text-sm text-muted-foreground mb-5">A star-schema-style model: dimension tables describe customers, products, and geography; fact tables capture behavior and transactions.</p>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
           {SCHEMA.map(t => (
             <div key={t.table} className="rounded-xl border border-border bg-card/40 p-3">

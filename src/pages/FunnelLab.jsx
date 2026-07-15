@@ -39,7 +39,7 @@ export default function FunnelLab() {
       <PageHeader
         eyebrow="Module 02 · Funnel drop-off"
         title="Funnel Lab"
-        subtitle="Watch people move from visit to purchase, one step at a time. See where they drop off, and which channel or device is to blame."
+        subtitle="Step by step from visit to purchase. See where users drop off, and which channel or device is responsible."
       />
 
       <div className="glass rounded-2xl p-6">
@@ -78,7 +78,7 @@ export default function FunnelLab() {
         <h3 className="font-heading font-semibold mb-4">Checkout → purchase by device</h3>
         <CompareBars rows={f.byDevice.map(d => ({ segment: d.segment, conversion: d.checkoutToPurchase }))} valueKey="conversion" metricLabel="Checkout→Purchase" />
         <p className="mt-4 text-sm text-muted-foreground">
-          Mobile checkout is the biggest leak you can actually fix. Get 10 more points out of mobile checkout-to-purchase and you add roughly {mobile ? Math.round((mobile.conversion - desktop?.conversion)) : 0} points to the whole funnel.
+          Mobile checkout is the largest fixable leak. A 10-point gain on mobile checkout-to-purchase adds roughly {mobile ? Math.round((mobile.conversion - desktop?.conversion)) : 0} points to end-to-end conversion.
         </p>
       </div>
     </div>

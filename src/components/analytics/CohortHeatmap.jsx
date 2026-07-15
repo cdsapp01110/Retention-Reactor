@@ -69,7 +69,7 @@ export default function CohortHeatmap({ cohorts, onSelectCohort, selectedCohort 
           <b className="text-primary">{hover.retained}</b> retained ({fmtPct(hover.rate)})
         </div>
       )}
-      <p className="mt-2 text-xs text-muted-foreground">Click a cohort row to dig into its channels and funnel. Cells above 60% retention saturate to teal.</p>
+      <p className="mt-2 text-xs text-muted-foreground">Click a cohort row to inspect its channels and funnel. Cells above 60% retention saturate to teal.</p>
     </div>
   );
 }

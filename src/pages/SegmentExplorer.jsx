@@ -26,7 +26,7 @@ export default function SegmentExplorer() {
       <PageHeader
         eyebrow="Module 04 · Segment intelligence"
         title="Segment Explorer"
-        subtitle="Every segment scored on a composite of conversion, retention, and LTV — then tagged for risk or opportunity. The ranking is where budget should move."
+        subtitle="Every segment is scored on conversion, retention, and LTV, then tagged for risk or opportunity. The ranking indicates where budget should be directed."
       />
 
       <div className="flex items-center gap-2 mb-6">
@@ -54,10 +54,10 @@ export default function SegmentExplorer() {
       <div className="mt-6 glass rounded-2xl p-5">
         <h3 className="font-heading font-semibold mb-3">Narrated insight</h3>
         <div className="space-y-3 text-sm text-foreground/85 leading-relaxed">
-          <p><b className="text-chart-3">{best.segment}</b> is your healthiest segment. High retention, good LTV. Put more acquisition spend here, and copy its onboarding into the weaker channels.</p>
-          <p><b className="text-destructive">{worst.segment}</b> drags the portfolio down. The problem is {worst.conversion < 20 ? "people aren't converting at the top" : "people buy once and don't come back"}. Run a quick diagnostic before spending more here.</p>
-          {discRisk && <p><b className="text-chart-4">{discRisk.segment}</b> leans hard on discount customers who churn. Cut the promo depth and lean on lifecycle CRM instead.</p>}
-          <p className="text-xs text-muted-foreground pt-2 border-t border-border">Opportunity score = 30% conversion + 40% retention + 30% capped LTV. Tags use rule-based thresholds. See the SQL Logic page for how.</p>
+          <p><b className="text-chart-3">{best.segment}</b> is the healthiest segment, with high retention and strong LTV. Concentrate acquisition spend here and replicate its onboarding flow in weaker channels.</p>
+          <p><b className="text-destructive">{worst.segment}</b> drags down the portfolio. The issue is {worst.conversion < 20 ? 'low conversion at the top of the funnel' : 'buyers purchase once and do not return'}. Run a diagnostic before investing further.</p>
+          {discRisk && <p><b className="text-chart-4">{discRisk.segment}</b> over-indexes on discount-acquired customers who churn. Reduce promo depth and shift toward lifecycle CRM.</p>}
+          <p className="text-xs text-muted-foreground pt-2 border-t border-border">Opportunity score weights conversion at 30%, retention at 40%, and capped LTV at 30%. Tags use rule-based thresholds; see the SQL Logic page for details.</p>
         </div>
       </div>
     </div>

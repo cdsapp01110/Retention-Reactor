@@ -1,8 +1,9 @@
 import { Link } from 'react-router-dom';
 import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator } from '@/components/ui/dropdown-menu';
-import { LayoutDashboard, CalendarRange, Filter, DollarSign, Layers, Database, Lightbulb, Info, Menu, ChevronDown } from 'lucide-react';
+import { Home, LayoutDashboard, CalendarRange, Filter, DollarSign, Layers, Database, Lightbulb, Info, Menu, ChevronDown } from 'lucide-react';
 
 const PAGES = [
+  { to: '/', label: 'Home', icon: Home },
   { to: '/overview', label: 'Overview', icon: LayoutDashboard },
   { to: '/cohorts', label: 'Cohort Lab', icon: CalendarRange },
   { to: '/funnel', label: 'Funnel Lab', icon: Filter },

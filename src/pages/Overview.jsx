@@ -23,7 +23,7 @@ export default function Overview() {
       <PageHeader
         eyebrow={exec ? 'Executive mode' : 'Analyst mode'}
         title="Overview"
-        subtitle="One screen for how the business is doing. Use the filter bar to slice it any way you want."
+        subtitle="A single screen for how the business is performing. Use the filter bar to slice the model by region, channel, device, or discount."
       />
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -62,7 +62,7 @@ export default function Overview() {
             <Row label="Discount margin" value={fmtPct(data.discountImpact.discount.marginPct)} bad />
             <Row label="Full-price repeat" value={fmtPct(data.discountImpact.fullPrice.repeatRate)} good />
             <Row label="Discount repeat" value={fmtPct(data.discountImpact.discount.repeatRate)} bad />
-            <p className="text-xs text-muted-foreground pt-2 border-t border-border">Discounts make that first purchase more likely, but they cut your margin and people don't come back as often. Short-term win, long-term cost.</p>
+            <p className="text-xs text-muted-foreground pt-2 border-t border-border">Discounts increase first-purchase conversion but reduce margin and repeat rates. A short-term gain with a long-term cost.</p>
           </div>
           <Link to="/revenue" className="mt-4 text-xs text-primary inline-flex items-center gap-1 hover:underline">Open Revenue Lab <ArrowRight className="h-3 w-3" /></Link>
         </div>

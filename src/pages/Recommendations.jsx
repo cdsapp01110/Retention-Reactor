@@ -4,16 +4,16 @@ import Skeleton, { PageHeader } from '@/components/ui/Skeleton';
 import { ArrowUpRight } from 'lucide-react';
 
 const NEXT_ANALYSES = [
-  { q: 'Survival-curve churn model on each cohort', why: 'Replace retention binary with a hazard function forecasting LTV.' },
-  { q: 'Channel-level CAC + payback integration', why: 'Tie acquisition cost to retention-quality LTV for true ROAS.' },
-  { q: 'Causal uplift: discount A/B holdout', why: 'Quantify how much discount revenue is incremental vs cannibalized.' },
-  { q: 'Funnel attribution by session path', why: 'Multi-touch attribution to separate assist vs convert channels.' }
+  { q: 'Survival-curve churn model on each cohort', why: 'Replace the retention binary with a hazard function that forecasts LTV.' },
+  { q: 'Channel-level CAC and payback integration', why: 'Tie acquisition cost to retention-quality LTV for a true ROAS figure.' },
+  { q: 'Causal uplift: discount A/B holdout', why: 'Quantify how much discount revenue is incremental versus cannibalized.' },
+  { q: 'Funnel attribution by session path', why: 'Multi-touch attribution to separate assist and convert channels.' }
 ];
 const LIMITATIONS = [
-  'Simulated (synthetic) data designed to mirror real event/order systems — patterns are illustrative, not from a live business.',
-  'Margin is a proxy (category margin %), not a costed P&L; net_revenue ignores refunds and reversals.',
-  'Cohorts are monthly; weekly seasonality is smoothed out.',
-  'Discount treatment is observational, not randomized — no causal claim on conversion lift.'
+  'Simulated, synthetic data designed to mirror real event and order systems. Patterns are illustrative, not from a live business.',
+  'Margin is a proxy (category margin percentage), not a costed P&L, and net revenue ignores refunds and reversals.',
+  'Cohorts are monthly, so weekly seasonality is smoothed out.',
+  'Discount treatment is observational, not randomized, so no causal claim on conversion lift.'
 ];
 
 export default function Recommendations() {
@@ -25,11 +25,11 @@ export default function Recommendations() {
       <PageHeader
         eyebrow="Module 05 · Recommendations engine"
         title="Evidence-based action plan"
-        subtitle="Every initiative here comes from the live numbers in this app. The finding names the exact metric that triggered it, then gives a concrete action, the likely impact, and how confident we are."
+        subtitle="Every initiative is generated from the live metrics in this app. The finding cites the exact metric that triggered it, followed by a concrete action, the projected impact, and a confidence level."
       />
 
       <div className="rounded-2xl border border-primary/25 bg-primary/5 px-5 py-4 mb-6 text-sm text-foreground/85">
-        Priority is impact times confidence. High-impact, high-confidence moves go first. The medium-confidence ones come with the diagnostic that would make us sure.
+        Priority reflects impact multiplied by confidence. High-impact, high-confidence initiatives come first. Medium-confidence items are paired with the diagnostic that would raise confidence.
       </div>
 
       <div className="grid lg:grid-cols-2 gap-4">

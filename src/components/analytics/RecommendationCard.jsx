@@ -13,13 +13,13 @@ export default function RecommendationCard({ rec, index = 0 }) {
       className="glass rounded-2xl p-5 hover:glow-violet transition-shadow group"
     >
       <div className="flex items-start justify-between gap-3 mb-3">
-        <div className="flex items-center gap-3">
-          <div className="h-9 w-9 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary">
+        <div className="flex items-center gap-3 min-w-0">
+          <div className="h-9 w-9 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary shrink-0">
             <Zap className="h-4 w-4" />
           </div>
-          <h4 className="font-heading font-semibold text-foreground text-lg leading-tight">{rec.title}</h4>
+          <h4 className="font-heading font-semibold text-foreground text-base leading-snug">{rec.title}</h4>
         </div>
-        <span className={`shrink-0 text-[11px] px-2 py-0.5 rounded-full border ${IMPACT[rec.impact] || IMPACT.Medium}`}>{rec.impact} impact</span>
+        <span className={`shrink-0 whitespace-nowrap text-[11px] px-2 py-0.5 rounded-full border ${IMPACT[rec.impact] || IMPACT.Medium}`}>{rec.impact} impact</span>
       </div>
       <p className="text-sm text-muted-foreground leading-relaxed mb-3"><b className="text-foreground/80">Finding:</b> {rec.finding}</p>
       <div className="flex items-start gap-2 text-sm text-foreground/85 leading-relaxed mb-4">

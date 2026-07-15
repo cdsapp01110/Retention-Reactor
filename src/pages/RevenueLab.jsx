@@ -19,7 +19,7 @@ export default function RevenueLab() {
       <PageHeader
         eyebrow="Module 03 · Revenue & discount impact"
         title="Revenue & Discount Lab"
-        subtitle="Does discounting buy short-term sales at the cost of margin and loyalty? Compare full-price and discount-acquired customers across the board."
+        subtitle="Does discounting drive short-term sales at the expense of margin and loyalty? Compare full-price and discount-acquired customers across every metric."
       />
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -35,8 +35,8 @@ export default function RevenueLab() {
       </div>
 
       <div className="mt-4 rounded-xl border border-chart-4/25 bg-chart-4/5 px-5 py-4 text-sm text-foreground/85">
-        <b className="text-chart-4">Here's the trade-off.</b> Discount customers convert faster, but their margin runs{' '}
-        <b>{marginDelta}pp lower</b> and they repeat <b>{repeatDelta}pp less often</b>. It looks like growth. A lot of it isn't.
+        <b className="text-chart-4">The trade-off.</b> Discount customers convert faster, but their margin runs{' '}
+        <b>{marginDelta}pp lower</b> and they repeat <b>{repeatDelta}pp less often</b>. The volume looks like growth; much of it is not.
       </div>
 
       <div className="grid lg:grid-cols-2 gap-5 mt-6">
@@ -55,7 +55,7 @@ export default function RevenueLab() {
           </ResponsiveContainer>
         </div>
         <div className="glass rounded-2xl p-5">
-          <h3 className="font-heading font-semibold mb-4">Margin vs discount depth by channel</h3>
+          <h3 className="font-heading font-semibold mb-4">Margin versus discount depth by channel</h3>
           <div className="space-y-3 text-sm">
             {data.revenueByChannel.map((r, i) => (
               <div key={r.segment} className="flex items-center gap-3">
@@ -70,7 +70,7 @@ export default function RevenueLab() {
               </div>
             ))}
           </div>
-          <p className="mt-4 text-xs text-muted-foreground">Green is margin, coral is discount depth. Channels with tall coral bars and thin green are shipping revenue at low quality.</p>
+          <p className="mt-4 text-xs text-muted-foreground">Green marks margin, coral marks discount depth. Channels with tall coral bars and thin green are moving low-quality revenue.</p>
         </div>
       </div>
     </div>

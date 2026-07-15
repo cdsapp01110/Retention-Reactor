@@ -23,10 +23,10 @@ export default function Landing() {
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
           <h1 className="font-heading text-5xl md:text-7xl font-bold tracking-tight leading-[1.02]">
             Retention, <span className="gradient-text">decoded</span>.<br />
-            Where your funnel <span className="text-muted-foreground">bleeds</span>.
+            Where the funnel <span className="text-muted-foreground">leaks</span>.
           </h1>
           <p className="mt-6 text-lg text-muted-foreground max-w-2xl leading-relaxed">
-            See which customers stick around and where shoppers drop off. Every chart runs on real SQL you can actually read.
+            A direct-to-consumer subscription brand serving customers across North America, most of them urban professionals between 25 and 44. This dashboard shows which of those buyers return, where the funnel leaks, and how discounts affect revenue.
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-3">
             <Link to="/cohorts" className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-5 py-3 rounded-xl font-medium hover:opacity-90 transition-opacity">
@@ -59,8 +59,8 @@ export default function Landing() {
 
         <div className="mt-10 grid md:grid-cols-2 gap-4 text-sm">
           {[
-            ['Built on a real data model', 'Users, sessions, events, orders, products, campaigns. Modeled after a modern event store so the numbers behave like a real business.'],
-            ['The SQL is right there', 'Every module shows the queries behind it. No hidden logic, no mystery exports.']
+            ['Built on a real data model', 'Users, sessions, events, orders, products, and campaigns, modeled after a modern event store so the numbers reflect a real business.'],
+            ['The queries are in the open', 'Each module documents the SQL behind it. No hidden logic, no opaque exports.']
           ].map(([h, p]) => (
             <div key={h} className="glass rounded-2xl p-5">
               <h3 className="font-heading font-semibold text-foreground mb-1.5">{h}</h3>
