@@ -26,7 +26,7 @@ export default function Landing() {
             Where the funnel <span className="text-muted-foreground">leaks</span>.
           </h1>
           <p className="mt-6 text-lg text-muted-foreground max-w-2xl leading-relaxed">
-            A direct-to-consumer subscription brand serving customers across North America, most of them urban professionals between 25 and 44. This dashboard shows which of those buyers return, where the funnel leaks, and how discounts affect revenue.
+            A mock direct-to-consumer subscription brand, built as a portfolio case study. Its simulated customers span North America and skew toward urban professionals between 25 and 44. The dashboard shows which of those buyers return, where the funnel leaks, and how discounts affect revenue.
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-3">
             <Link to="/cohorts" className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-5 py-3 rounded-xl font-medium hover:opacity-90 transition-opacity">
@@ -52,22 +52,10 @@ export default function Landing() {
             <MiniStat label="Avg LTV" value={k ? fmtMoney(k.totalCustomers ? Math.round(k.netRevenue / k.totalCustomers) : 0) : '—'} sub={`${k ? k.totalOrders : '—'} orders`} accent="chart-3" />
           </div>
           <div className="border-t border-border pt-5">
-            <div className="text-xs text-muted-foreground uppercase tracking-wider mb-3 flex items-center gap-2"><TrendingUp className="h-3.5 w-3.5" /> Live funnel preview</div>
+            <div className="text-xs text-muted-foreground uppercase tracking-wider mb-3 flex items-center gap-2"><TrendingUp className="h-3.5 w-3.5" /> Funnel preview</div>
             {data ? <FunnelChart stages={data.funnel.stages} /> : <div className="h-40 animate-pulse rounded-xl bg-muted/30" />}
           </div>
         </motion.div>
-
-        <div className="mt-10 grid md:grid-cols-2 gap-4 text-sm">
-          {[
-            ['Built on a real data model', 'Users, sessions, events, orders, products, and campaigns, modeled after a modern event store so the numbers reflect a real business.'],
-            ['The queries are in the open', 'Each module documents the SQL behind it. No hidden logic, no opaque exports.']
-          ].map(([h, p]) => (
-            <div key={h} className="glass rounded-2xl p-5">
-              <h3 className="font-heading font-semibold text-foreground mb-1.5">{h}</h3>
-              <p className="text-muted-foreground leading-relaxed">{p}</p>
-            </div>
-          ))}
-        </div>
       </div>
     </div>
   );

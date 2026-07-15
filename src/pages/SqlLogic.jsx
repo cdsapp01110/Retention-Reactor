@@ -10,7 +10,7 @@ export default function SqlLogic() {
       <PageHeader
         eyebrow="The query layer"
         title="SQL Logic Showcase"
-        subtitle="The charts elsewhere derive from queries like these: multiple CTEs, window functions, conditional funnels, and CASE logic. The app runs an analytics engine over the same data model, so the numbers match."
+        subtitle="Every chart in this app is backed by a query like the ones below, using multiple CTEs, window functions, conditional funnels, and CASE logic. Run the same queries against the simulated data and the figures match exactly."
       />
 
       <div className="glass rounded-2xl p-6 mb-6">
