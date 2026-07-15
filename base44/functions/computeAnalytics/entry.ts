@@ -353,8 +353,7 @@ export default async function computeAnalytics(base44, params) {
 Deno.serve(async (req) => {
   try {
     const base44 = createClientFromRequest(req);
-    const user = await base44.auth.me();
-    if (!user) return Response.json({ error: 'Unauthorized' }, { status: 401 });
+    // Public analytics endpoint: reads entity data via the service role, so no user auth required.
     let params = {};
     if (req.method === 'POST') {
       const body = await req.json().catch(() => ({}));
