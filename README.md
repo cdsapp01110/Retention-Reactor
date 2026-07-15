@@ -1,6 +1,6 @@
 <img width="1429" height="898" alt="image" src="https://github.com/user-attachments/assets/8ea866fc-b430-4e2d-b23e-7f6fa414e922" />
 
-# Retention Reactor: DTC Analytics Lab
+# Retention Reactor: DTC(Direct-to-Consumer) Analytics Lab
 
 Retention Reactor is an interactive analytics dashboard for a simulated direct-to-consumer subscription business. It shows where people lose interest before buying, which customers come back, and whether discounts are actually helping the business make money.
 
