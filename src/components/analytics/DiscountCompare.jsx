@@ -12,7 +12,7 @@ function Stat({ label, value, hint }) {
 
 export default function DiscountCompare({ data }) {
   if (!data) return null;
-  const d = data.discount, f = data.full_price;
+  const d = data.discount, f = data.fullPrice;
   const convLift = d.customers && f.customers ? null : null;
   const marginDelta = (f.marginPct - d.marginPct).toFixed(1);
   const repeatDelta = (f.repeatRate - d.repeatRate).toFixed(1);
