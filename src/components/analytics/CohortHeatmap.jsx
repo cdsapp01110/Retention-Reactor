@@ -21,14 +21,14 @@ export default function CohortHeatmap({ cohorts, onSelectCohort, selectedCohort 
   const periods = Array.from({ length: maxPeriod + 1 }, (_, i) => i);
 
   return (
-    <div className="overflow-x-auto">
-      <table className="border-separate border-spacing-1 text-xs">
+    <div className="overflow-x-auto -mx-1 px-1">
+      <table className="border-separate border-spacing-0 sm:border-spacing-1 text-xs">
         <thead>
           <tr>
-            <th className="text-left text-muted-foreground font-medium pr-3 pb-2 sticky left-0 bg-background">Cohort</th>
-            <th className="text-muted-foreground font-medium pb-2 px-1">Size</th>
+            <th className="text-left text-muted-foreground font-medium pr-2 sm:pr-3 pb-2 sticky left-0 bg-background z-10">Cohort</th>
+            <th className="text-muted-foreground font-medium pb-2 px-1 hidden sm:table-cell">Size</th>
             {periods.map(p => (
-              <th key={p} className="text-muted-foreground font-medium pb-2 px-1 text-center w-14">M{p}</th>
+              <th key={p} className="text-muted-foreground font-medium pb-2 px-0 sm:px-1 text-center w-6 h-7 sm:w-14 sm:h-9">M{p}</th>
             ))}
           </tr>
         </thead>
@@ -41,20 +41,20 @@ export default function CohortHeatmap({ cohorts, onSelectCohort, selectedCohort 
                 onClick={() => onSelectCohort?.(isSelected ? null : row.cohort)}
                 className={`cursor-pointer transition-colors ${isSelected ? 'ring-1 ring-primary' : ''}`}
               >
-                <td className={`pr-3 py-1 font-mono text-foreground sticky left-0 bg-background whitespace-nowrap ${isSelected ? 'text-primary' : ''}`}>{label}</td>
-                <td className="text-muted-foreground text-center px-1 font-mono">{row.size}</td>
+                <td className={`pr-2 sm:pr-3 py-1 font-mono text-foreground sticky left-0 bg-background whitespace-nowrap text-[10px] sm:text-xs ${isSelected ? 'text-primary' : ''}`}>{label}</td>
+                <td className="text-muted-foreground text-center px-1 font-mono hidden sm:table-cell">{row.size}</td>
                 {row.values.map((v, i) => {
-                  if (v == null) return <td key={i} className="w-14 h-9" />;
+                  if (v == null) return <td key={i} className="w-6 h-7 sm:w-14 sm:h-9" />;
                   const c = heatColor(v.rate);
                   return (
                     <td
                       key={i}
                       onMouseEnter={() => setHover({ cohort: row.cohort, period: i, ...v })}
                       onMouseLeave={() => setHover(null)}
-                      className="w-14 h-9 rounded-md text-center font-mono text-[11px] transition-transform hover:scale-110 hover:z-10 relative"
+                      className="w-6 h-7 sm:w-14 sm:h-9 rounded-[3px] sm:rounded-md text-center font-mono text-[8px] sm:text-[11px] transition-transform hover:scale-110 hover:z-10 relative"
                       style={{ backgroundColor: c.bg, color: c.txt }}
                     >
-                      {v.rate}%
+                      {v.rate}
                     </td>
                   );
                 })}

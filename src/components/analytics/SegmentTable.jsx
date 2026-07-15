@@ -11,8 +11,9 @@ const TAG_STYLE = {
 
 export default function SegmentTable({ rows, dimension = 'Channel' }) {
   if (!rows || !rows.length) return <div className="text-sm text-muted-foreground">No segments.</div>;
-  return (
-    <div className="overflow-x-auto rounded-xl border border-border">
+
+  const desktopTable = (
+    <div className="hidden sm:block overflow-x-auto rounded-xl border border-border">
       <table className="w-full text-sm">
         <thead>
           <tr className="text-muted-foreground text-xs uppercase tracking-wider bg-muted/20">
@@ -51,6 +52,55 @@ export default function SegmentTable({ rows, dimension = 'Channel' }) {
           })}
         </tbody>
       </table>
+    </div>
+  );
+
+  const mobileCards = (
+    <div className="sm:hidden space-y-2.5">
+      {rows.map(r => {
+        const tag = TAG_STYLE[r.tag] || TAG_STYLE['Stable'];
+        const TagIcon = tag.icon;
+        return (
+          <div key={r.segment} className="rounded-xl border border-border bg-card/40 p-3.5">
+            <div className="flex items-start justify-between gap-2">
+              <div className="min-w-0">
+                <div className="font-medium text-foreground truncate">{r.segment}</div>
+                <span className={`mt-1 inline-flex items-center gap-1 text-[10px] px-1.5 py-0.5 rounded-full border ${tag.cls}`}>
+                  <TagIcon className="h-3 w-3" /> {r.tag}
+                </span>
+              </div>
+              <div className="text-right shrink-0">
+                <div className="num text-xl font-bold text-primary leading-none">{r.score}</div>
+                <div className="text-[10px] text-muted-foreground uppercase tracking-wider mt-0.5">score</div>
+              </div>
+            </div>
+            <div className="grid grid-cols-3 gap-x-2 gap-y-1.5 mt-3 text-xs">
+              <Metric label="Cust" value={r.customers} />
+              <Metric label="Conv" value={`${r.conversion}%`} />
+              <Metric label="Reten" value={`${r.retention}%`} />
+              <Metric label="LTV" value={fmtMoney(r.ltv)} />
+              <Metric label="AOV" value={fmtMoney(r.aov)} />
+              <Metric label="Disc%" value={`${r.discountAdoption}%`} />
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  );
+
+  return (
+    <>
+      {desktopTable}
+      {mobileCards}
+    </>
+  );
+}
+
+function Metric({ label, value }) {
+  return (
+    <div>
+      <div className="text-[10px] text-muted-foreground uppercase tracking-wider">{label}</div>
+      <div className="font-mono text-foreground leading-tight">{value}</div>
     </div>
   );
 }
