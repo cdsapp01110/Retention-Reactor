@@ -23,7 +23,7 @@ export default function Overview() {
       <PageHeader
         eyebrow={exec ? 'Executive mode' : 'Analyst mode'}
         title="Overview"
-        subtitle="A single screen for how the business is performing. Use the filter bar to slice the model by region, channel, device, or discount."
+        subtitle="An overview how the business is performing. Use the filter bar to slice the model by region, channel, device, or discount."
       />
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
