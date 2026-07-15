@@ -1,7 +1,22 @@
 /** @type {import('tailwindcss').Config} */
+const CHARTS = ['chart-1', 'chart-2', 'chart-3', 'chart-4', 'chart-5', 'primary'];
+const OPS = ['10', '15', '20', '30', '40', '60', '80'];
+const safelist = [];
+CHARTS.forEach(c => {
+  safelist.push('text-' + c);
+  safelist.push('bg-' + c);
+  safelist.push('border-' + c);
+  OPS.forEach(o => {
+    safelist.push('bg-' + c + '/' + o);
+    safelist.push('border-' + c + '/' + o);
+    safelist.push('text-' + c + '/' + o);
+  });
+});
+
 module.exports = {
   darkMode: ["class"],
   content: ["./index.html", "./src/**/*.{ts,tsx,js,jsx}"],
+  safelist,
   theme: {
     extend: {
       borderRadius: {
@@ -49,14 +64,12 @@ module.exports = {
       keyframes: {
         'accordion-down': { from: { height: '0' }, to: { height: 'var(--radix-accordion-content-height)' } },
         'accordion-up': { from: { height: 'var(--radix-accordion-content-height)' }, to: { height: '0' } },
-        'fade-in': { from: { opacity: '0', transform: 'translateY(8px)' }, to: { opacity: '1', transform: 'translateY(0)' } },
-        'shimmer': { '0%': { backgroundPosition: '-1000px 0' }, '100%': { backgroundPosition: '1000px 0' } }
+        'fade-in': { from: { opacity: '0', transform: 'translateY(8px)' }, to: { opacity: '1', transform: 'translateY(0)' } }
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
-        'fade-in': 'fade-in 0.4s ease-out',
-        'shimmer': 'shimmer 2s linear infinite'
+        'fade-in': 'fade-in 0.4s ease-out'
       }
     }
   },
