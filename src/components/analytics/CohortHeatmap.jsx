@@ -3,14 +3,14 @@ import { fmtPct } from '@/lib/analytics';
 
 function heatColor(rate) {
   if (rate == null) return { bg: 'hsl(var(--muted)/0.25)', txt: 'hsl(var(--muted-foreground)/0.4)' };
-  // 0% -> muted blue-grey, 100% -> violet/cyan
-  const t = Math.max(0, Math.min(1, rate / 60)); // saturate at 60% retention
-  const hue = 255 - t * 70;        // 255 (indigo) -> 185 (cyan)
-  const sat = 45 + t * 50;
-  const light = 22 + t * 38;        // dark -> bright
+  // 0% -> dark slate, high -> bright teal
+  const t = Math.max(0, Math.min(1, rate / 60));
+  const hue = 198 - t * 24;        // 198 (slate blue) -> 174 (teal)
+  const sat = 35 + t * 45;
+  const light = 20 + t * 30;
   return {
-    bg: `hsl(${hue} ${sat}% ${light}% / ${0.25 + t * 0.75})`,
-    txt: light > 48 ? 'hsl(var(--background))' : 'hsl(var(--foreground)/0.85)'
+    bg: `hsl(${hue} ${sat}% ${light}% / ${0.3 + t * 0.6})`,
+    txt: light > 44 ? 'hsl(205 45% 7%)' : 'hsl(var(--foreground)/0.9)'
   };
 }
 
@@ -69,7 +69,7 @@ export default function CohortHeatmap({ cohorts, onSelectCohort, selectedCohort 
           <b className="text-primary">{hover.retained}</b> retained ({fmtPct(hover.rate)})
         </div>
       )}
-      <p className="mt-2 text-xs text-muted-foreground">Click a cohort row to filter downstream views. Cells above 60% retention saturate to cyan.</p>
+      <p className="mt-2 text-xs text-muted-foreground">Click a cohort row to dig into its channels and funnel. Cells above 60% retention saturate to teal.</p>
     </div>
   );
 }

@@ -3,12 +3,12 @@ import { PageHeader } from '@/components/ui/Skeleton';
 import { ArrowRight } from 'lucide-react';
 
 const SECTIONS = [
-  { h: 'Business question', p: 'For a subscription-style e-commerce product: which customer cohorts retain best, where does the funnel leak by channel/device/region/discount, which segments create durable value, and what should leadership do next?' },
-  { h: 'Methodology', p: 'I modeled a star-schema of users, sessions, events, orders, order_items, products, campaigns, channels, and regions, then built analytical logic — cohort assignment, retention matrices, conditional funnels, discount-quality comparison, and risk/opportunity ranking — expressed as SQL. The app runs an analytics engine that consumes this model and reproduces what those queries would return.' },
-  { h: 'Key findings', p: 'Discount-acquired customers convert faster but carry materially lower margin and repeat rates. Mobile checkout completion is the single largest funnel leak. One channel cohort (Email) is a clear retention outlier worth scaling. Month-1 retention averages modestly — a repeat-purchase engine is the highest-leverage lifecycle investment.' },
-  { h: 'Recommendations', p: 'Fix mobile checkout, curtail discounting on the promo-heaviest channel, reallocate paid spend toward the highest-retention channel, investigate the weakest region, and build a 14/30-day post-purchase lifecycle program. All are quantified in the Action Plan.' },
-  { h: 'Limitations', p: 'Synthetic data, proxy margins, monthly cohorts, observational discount treatment. Detailed on the Action Plan page.' },
-  { h: 'Next steps', p: 'Survival-churn modeling, CAC/LTV payback integration, a randomized discount holdout for causal lift, and multi-touch session attribution.' }
+  { h: 'Business question', p: 'For a subscription-style e-commerce product: which customers actually stick around, where does the funnel leak by channel, device, region, and discount, which segments create lasting value, and what should leadership do next?' },
+  { h: 'Methodology', p: 'I built a star schema with users, sessions, events, orders, order_items, products, campaigns, channels, and regions. Then I wrote the analytical logic as SQL: cohort assignment, retention matrices, conditional funnels, discount-quality comparison, and risk/opportunity ranking. The app runs an analytics engine that consumes the same model and reproduces what those queries return.' },
+  { h: 'Key findings', p: 'Discount customers convert faster but carry much lower margin and repeat far less often. Mobile checkout is the biggest funnel leak. One channel (Email) is a clear retention outlier worth scaling. Month-1 retention is modest, so a repeat-purchase engine is the highest-leverage lifecycle bet.' },
+  { h: 'Recommendations', p: 'Fix mobile checkout, pull back discounting on the promo-heaviest channel, move paid spend toward the best-retention channel, dig into the weakest region, and build a 14/30-day post-purchase lifecycle program. The Action Plan page puts numbers on all of it.' },
+  { h: 'Limitations', p: 'Synthetic data, proxy margins, monthly cohorts, and observational discount treatment (no causal claim). The Action Plan page says more.' },
+  { h: 'Next steps', p: 'Survival-churn modeling, CAC-to-LTV payback, a randomized discount holdout for real causal lift, and multi-touch session attribution.' }
 ];
 
 export default function About() {
@@ -17,15 +17,12 @@ export default function About() {
       <PageHeader
         eyebrow="Portfolio context"
         title="About this case study"
-        subtitle="A self-contained, SQL-first product analytics scenario built to demonstrate analytical thinking, product sense, and stakeholder-grade tooling."
+        subtitle="A made-up but realistic analytics scenario. It shows how a product analyst turns messy behavioral data into evidence and action."
       />
 
       <div className="glass rounded-2xl p-6 mb-6">
         <p className="text-foreground/90 leading-relaxed">
-          This is a <b>simulated but realistic</b> product analytics scenario. The data model was designed to mirror
-          real-world event, order, and customer systems — the analytical questions, SQL patterns, and recommendations
-          are exactly what a senior product analyst would ship. The focus is <b>SQL-driven decision intelligence</b>:
-          turning messy behavioral data into evidence and action, not just charts.
+          This is a made-up but realistic analytics scenario. The data model mirrors real event, order, and customer systems, and the questions, SQL patterns, and recommendations are what a senior product analyst would actually ship. The point is SQL-driven decision-making: turning behavior into evidence and action.
         </p>
       </div>
 

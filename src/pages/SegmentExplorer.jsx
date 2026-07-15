@@ -54,10 +54,10 @@ export default function SegmentExplorer() {
       <div className="mt-6 glass rounded-2xl p-5">
         <h3 className="font-heading font-semibold mb-3">Narrated insight</h3>
         <div className="space-y-3 text-sm text-foreground/85 leading-relaxed">
-          <p><b className="text-chart-3">{best.segment}</b> is the healthiest segment — high retention and LTV make it the right place to concentrate acquisition spend. Clone its onboarding sequence into weaker channels.</p>
-          <p><b className="text-destructive">{worst.segment}</b> drags the portfolio. Diagnosis: {worst.conversion < 20 ? 'top-of-funnel conversion is the constraint' : 'retention collapse after first purchase'}. Worth a targeted diagnostic before further investment.</p>
-          {discRisk && <p><b className="text-chart-4">{discRisk.segment}</b> over-indexes on discount-acquired customers who churn — scale back promo depth and shift to lifecycle CRM.</p>}
-          <p className="text-xs text-muted-foreground pt-2 border-t border-border">Opportunity score = 30% conversion + 40% retention + 30% (capped LTV). Tags apply rule-based thresholds — see the SQL Logic page for exact definitions.</p>
+          <p><b className="text-chart-3">{best.segment}</b> is your healthiest segment. High retention, good LTV. Put more acquisition spend here, and copy its onboarding into the weaker channels.</p>
+          <p><b className="text-destructive">{worst.segment}</b> drags the portfolio down. The problem is {worst.conversion < 20 ? "people aren't converting at the top" : "people buy once and don't come back"}. Run a quick diagnostic before spending more here.</p>
+          {discRisk && <p><b className="text-chart-4">{discRisk.segment}</b> leans hard on discount customers who churn. Cut the promo depth and lean on lifecycle CRM instead.</p>}
+          <p className="text-xs text-muted-foreground pt-2 border-t border-border">Opportunity score = 30% conversion + 40% retention + 30% capped LTV. Tags use rule-based thresholds. See the SQL Logic page for how.</p>
         </div>
       </div>
     </div>

@@ -45,7 +45,7 @@ export default function CohortLab() {
       <PageHeader
         eyebrow="Module 01 · Cohort retention"
         title="Cohort Lab"
-        subtitle={`${cohortTypeLabel} cohorts, ${data.cohorts.matrix.length} monthly groups. Cells show % of the cohort still active M-periods after acquisition. Click a row to drill into its channel mix and funnel.`}
+        subtitle={`${cohortTypeLabel} cohorts, ${data.cohorts.matrix.length} monthly groups. Each cell shows the share of the cohort still active that many months after they showed up. Click a row to dig into its channels and funnel.`}
       />
 
       <div className="glass rounded-2xl p-5 overflow-x-auto">

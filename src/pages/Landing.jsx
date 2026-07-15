@@ -1,8 +1,9 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowRight, Database, CalendarRange, Filter, Sparkles, TrendingUp } from 'lucide-react';
+import { ArrowRight, Database, CalendarRange, Filter, TrendingUp } from 'lucide-react';
 import { useAnalyticsQuery, fmtMoney, fmtPct } from '@/lib/analytics';
 import FunnelChart from '@/components/analytics/FunnelChart';
+import PageMenu from '@/components/PageMenu';
 
 export default function Landing() {
   const { data } = useAnalyticsQuery();
@@ -14,31 +15,18 @@ export default function Landing() {
       <div className="absolute top-1/3 -left-40 h-80 w-80 rounded-full bg-chart-2/15 blur-[120px] pointer-events-none" />
 
       <nav className="relative flex items-center justify-between px-8 py-5">
-        <div className="flex items-center gap-2.5">
-          <div className="h-9 w-9 rounded-xl bg-gradient-to-br from-primary to-chart-2 flex items-center justify-center shadow-lg shadow-primary/30">
-            <Sparkles className="h-5 w-5 text-white" />
-          </div>
-          <span className="font-heading font-bold tracking-tight">Retention Reactor</span>
-        </div>
-        <div className="flex items-center gap-2">
-          <Link to="/login" className="text-sm text-muted-foreground hover:text-foreground px-3 py-1.5">Sign in</Link>
-          <Link to="/register" className="text-sm font-medium bg-primary text-primary-foreground px-4 py-1.5 rounded-lg hover:opacity-90 transition-opacity">Get access</Link>
-        </div>
+        <span className="font-heading font-bold tracking-tight">Retention Reactor</span>
+        <PageMenu />
       </nav>
 
       <div className="relative max-w-6xl mx-auto px-8 pt-16 pb-24">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-          <div className="inline-flex items-center gap-2 text-xs px-3 py-1 rounded-full border border-border bg-card/40 backdrop-blur text-muted-foreground mb-6">
-            <span className="h-1.5 w-1.5 rounded-full bg-chart-3 animate-pulse" />
-            SQL-first product analytics · portfolio case study
-          </div>
           <h1 className="font-heading text-5xl md:text-7xl font-bold tracking-tight leading-[1.02]">
             Retention, <span className="gradient-text">decoded</span>.<br />
             Where your funnel <span className="text-muted-foreground">bleeds</span>.
           </h1>
           <p className="mt-6 text-lg text-muted-foreground max-w-2xl leading-relaxed">
-            A decision-intelligence layer over an event & order warehouse. Cohort retention, funnel drop-off,
-            and discount-driven revenue quality — every chart backed by queryable SQL, not a black-box BI export.
+            See which customers stick around and where shoppers drop off. Every chart runs on real SQL you can actually read.
           </p>
           <div className="mt-8 flex flex-wrap items-center gap-3">
             <Link to="/cohorts" className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-5 py-3 rounded-xl font-medium hover:opacity-90 transition-opacity">
@@ -69,11 +57,10 @@ export default function Landing() {
           </div>
         </motion.div>
 
-        <div className="mt-10 grid md:grid-cols-3 gap-4 text-sm">
+        <div className="mt-10 grid md:grid-cols-2 gap-4 text-sm">
           {[
-            ['Built on a real schema', 'users, sessions, events, orders, order_items, products, campaigns, channels, regions — modeled after a modern event store.'],
-            ['SQL is the hero', 'Every module documents the CTEs, window functions, and CASE-logic that produce it. No hidden queries.'],
-            ['Evidence over fluff', 'Each recommendation cites the exact metric that triggered it — defensible in a hiring panel.']
+            ['Built on a real data model', 'Users, sessions, events, orders, products, campaigns. Modeled after a modern event store so the numbers behave like a real business.'],
+            ['The SQL is right there', 'Every module shows the queries behind it. No hidden logic, no mystery exports.']
           ].map(([h, p]) => (
             <div key={h} className="glass rounded-2xl p-5">
               <h3 className="font-heading font-semibold text-foreground mb-1.5">{h}</h3>

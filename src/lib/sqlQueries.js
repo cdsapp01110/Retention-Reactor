@@ -20,7 +20,7 @@ export const QUERIES = [
     module: 'Cohort Lab',
     title: 'Cohort Assignment',
     question: 'Which month did each customer "belong" to, by signup vs. first purchase?',
-    why: 'Every retention curve needs a fixed anchor. We define two cohort bases — signup cohort (acquisition timing) and first-purchase cohort (monetization timing) — so we can compare top-of-funnel reach against revenue-quality retention.',
+    why: 'Every retention curve needs a fixed anchor. We define two cohort bases: signup cohort (when you got them) and first-purchase cohort (when they started paying). That lets us compare top-of-funnel reach against the quality of retention.',
     sql: `-- Assign each customer to a monthly cohort (two bases)
 WITH first_purchase AS (
     SELECT
@@ -166,8 +166,8 @@ FROM funnel_counts;`
     id: 'funnel-segment',
     module: 'Funnel Lab',
     title: 'Funnel by Segment (channel / device / region)',
-    question: 'Where does each segment leak most — and is mobile checkout the culprit?',
-    why: 'Grouping the conditional ladder by segment surfaces the bottleneck per slice. Pay special attention to checkout→purchase where device friction lives.',
+    question: 'Where does each segment leak most, and is mobile checkout the culprit?',
+    why: 'Grouping the ladder by segment surfaces the bottleneck for each slice. Keep an eye on checkout to purchase, where device friction shows up.',
     sql: `-- Funnel conversion by any segment dimension
 WITH segmented AS (
     SELECT

@@ -25,11 +25,11 @@ export default function Recommendations() {
       <PageHeader
         eyebrow="Module 05 · Recommendations engine"
         title="Evidence-based action plan"
-        subtitle="Each initiative is generated from the live metrics in this app — the finding cites the exact number that triggered it, then a concrete action, projected impact, and confidence."
+        subtitle="Every initiative here comes from the live numbers in this app. The finding names the exact metric that triggered it, then gives a concrete action, the likely impact, and how confident we are."
       />
 
       <div className="rounded-2xl border border-primary/25 bg-primary/5 px-5 py-4 mb-6 text-sm text-foreground/85">
-        Priority order reflects impact and confidence together. High-impact / high-confidence initiatives move first; medium-confidence items are paired with the diagnostic that would raise confidence.
+        Priority is impact times confidence. High-impact, high-confidence moves go first. The medium-confidence ones come with the diagnostic that would make us sure.
       </div>
 
       <div className="grid lg:grid-cols-2 gap-4">

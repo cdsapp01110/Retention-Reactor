@@ -265,64 +265,59 @@ export default async function computeAnalytics(base44, params) {
   }
   // ---- Recommendations ----
   const recs = [];
-  // worst checkout->purchase device
   const worstCheckoutDevice = [...funnelByDevice].sort((a, b) => (a.checkoutToPurchase || 0) - (b.checkoutToPurchase || 0))[0];
   if (worstCheckoutDevice) {
     recs.push({
       id: 'mobile-checkout',
-      title: `Fix ${worstCheckoutDevice.segment} checkout completion`,
-      finding: `${worstCheckoutDevice.segment} converts only ${worstCheckoutDevice.checkoutToPurchase}% from checkout to purchase — the widest leak in the funnel.`,
-      action: 'Streamline mobile checkout: guest checkout, Apple/Google Pay, address autocomplete, fewer form fields.',
+      title: `Fix checkout on ${worstCheckoutDevice.segment}`,
+      finding: `${worstCheckoutDevice.segment} goes from checkout to purchase only ${worstCheckoutDevice.checkoutToPurchase}% of the time. That's the widest leak in the funnel.`,
+      action: 'Make mobile checkout easier: guest checkout, Apple/Google Pay, address autocomplete, fewer form fields.',
       impact: 'High',
       confidence: 'High',
-      metric: `${worstCheckoutDevice.checkoutToPurchase}% checkout→purchase on ${worstCheckoutDevice.segment}`
+      metric: `${worstCheckoutDevice.checkoutToPurchase}% checkout to purchase on ${worstCheckoutDevice.segment}`
     });
   }
-  // discount risk segment
   const discRisk = segments.channel.find(s => s.discountAdoption > 50 && s.retention < 28);
   if (discRisk) {
     recs.push({
       id: 'discount-discipline',
-      title: `Curtail discounting on ${discRisk.segment}`,
-      finding: `${discRisk.segment} buyers are ${discRisk.discountAdoption}% discount-acquired but retain at only ${discRisk.retention}% — short-term conversion, long-term churn.`,
-      action: 'Shift budget from blanket discounts to lifecycle & loyalty for this channel; cap promo depth to 15%.',
+      title: `Pull back discounting on ${discRisk.segment}`,
+      finding: `${discRisk.segment} buyers are ${discRisk.discountAdoption}% discount-acquired, but only ${discRisk.retention}% stick around. Quick conversion, quick churn.`,
+      action: 'Move spend off blanket discounts and into lifecycle and loyalty for this channel. Cap promo depth at 15%.',
       impact: 'High',
       confidence: 'Medium',
       metric: `${discRisk.discountAdoption}% discount adoption · ${discRisk.retention}% retention`
     });
   }
-  // retention outlier segment to double down
   const bestChannel = segments.channel[0];
   if (bestChannel) {
     recs.push({
       id: 'scale-best',
       title: `Scale acquisition on ${bestChannel.segment}`,
-      finding: `${bestChannel.segment} delivers ${bestChannel.retention}% retention and ${bestChannel.ltv} LTV — the healthiest cohort base.`,
-      action: 'Reallocate paid budget toward this channel and clone its onboarding flow across weaker channels.',
+      finding: `${bestChannel.segment} keeps ${bestChannel.retention}% of customers and pulls ${bestChannel.ltv} LTV. That's your healthiest base.`,
+      action: 'Move paid budget toward this channel. Copy its onboarding flow into the weaker ones.',
       impact: 'Medium',
       confidence: 'High',
       metric: `${bestChannel.retention}% retention · ${bestChannel.ltv} LTV`
     });
   }
-  // weakest region
   const worstRegion = [...segments.region].sort((a, b) => a.conversion - b.conversion)[0];
   if (worstRegion) {
     recs.push({
       id: 'region-invest',
-      title: `Investigate funnel collapse in ${worstRegion.segment}`,
-      finding: `${worstRegion.segment} converts at just ${worstRegion.conversion}% — below portfolio average of ${round(conversionRate)}%.`,
-      action: 'Audit regional pricing, shipping cost, and localization; run a 30-day diagnostic on checkout abandonment.',
+      title: `Look into ${worstRegion.segment}`,
+      finding: `${worstRegion.segment} converts at just ${worstRegion.conversion}%, under the ${round(conversionRate)}% portfolio average.`,
+      action: 'Check regional pricing, shipping cost, and localization. Run a 30-day look at checkout abandonment.',
       impact: 'Medium',
       confidence: 'Medium',
       metric: `${worstRegion.conversion}% conversion in ${worstRegion.segment}`
     });
   }
-  // overall repeat purchase
   recs.push({
     id: 'repeat-engine',
     title: 'Build a repeat-purchase engine',
-    finding: `Month-1 cohort retention averages ${avgM1Retention}% — half of new buyers go dormant within 30 days of first purchase.`,
-    action: 'Trigger post-purchase lifecycle flows at day 14/30; merchandise complementary SKUs in order emails; reward second-order behavior.',
+    finding: `Month-1 retention averages ${avgM1Retention}%. Half of new buyers go quiet within 30 days of their first purchase.`,
+    action: 'Set up post-purchase lifecycle flows at day 14 and 30. Put complementary products in order emails. Reward the second order.',
     impact: 'High',
     confidence: 'High',
     metric: `${avgM1Retention}% avg month-1 retention`

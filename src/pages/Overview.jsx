@@ -22,8 +22,8 @@ export default function Overview() {
     <div className="p-8 max-w-7xl mx-auto animate-fade-in">
       <PageHeader
         eyebrow={exec ? 'Executive mode' : 'Analyst mode'}
-        title="Retention Reactor — overview"
-        subtitle="A one-screen read of acquisition, funnel health, and revenue quality across the simulated customer base. Adjust the filter bar to re-slice the entire model."
+        title="Overview"
+        subtitle="One screen for how the business is doing. Use the filter bar to slice it any way you want."
       />
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -51,7 +51,7 @@ export default function Overview() {
           <FunnelChart stages={data.funnel.stages} />
           {data.funnel.worstBottleneck && (
             <div className="mt-4 text-sm rounded-xl border border-destructive/20 bg-destructive/5 px-4 py-3 text-foreground/85">
-              <b className="text-destructive">Worst leak:</b> {data.funnel.worstBottleneck.label} — {data.funnel.worstBottleneck.dropOff}% drop-off, {data.funnel.worstBottleneck.lost} users lost.
+              <b className="text-destructive">Worst leak:</b> {data.funnel.worstBottleneck.label}. {data.funnel.worstBottleneck.dropOff}% drop-off, {data.funnel.worstBottleneck.lost} users lost.
             </div>
           )}
         </div>
@@ -62,7 +62,7 @@ export default function Overview() {
             <Row label="Discount margin" value={fmtPct(data.discountImpact.discount.marginPct)} bad />
             <Row label="Full-price repeat" value={fmtPct(data.discountImpact.fullPrice.repeatRate)} good />
             <Row label="Discount repeat" value={fmtPct(data.discountImpact.discount.repeatRate)} bad />
-            <p className="text-xs text-muted-foreground pt-2 border-t border-border">Discounts lift first-purchase conversion but erode margin and repeat behavior — the classic short-term/long-term trade-off.</p>
+            <p className="text-xs text-muted-foreground pt-2 border-t border-border">Discounts make that first purchase more likely, but they cut your margin and people don't come back as often. Short-term win, long-term cost.</p>
           </div>
           <Link to="/revenue" className="mt-4 text-xs text-primary inline-flex items-center gap-1 hover:underline">Open Revenue Lab <ArrowRight className="h-3 w-3" /></Link>
         </div>

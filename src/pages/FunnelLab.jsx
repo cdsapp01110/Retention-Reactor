@@ -39,7 +39,7 @@ export default function FunnelLab() {
       <PageHeader
         eyebrow="Module 02 · Funnel drop-off"
         title="Funnel Lab"
-        subtitle="Step-by-step conversion from visit to purchase, sliced by channel, device, and region. Find the step that leaks the most and the segment responsible."
+        subtitle="Watch people move from visit to purchase, one step at a time. See where they drop off, and which channel or device is to blame."
       />
 
       <div className="glass rounded-2xl p-6">
@@ -78,7 +78,7 @@ export default function FunnelLab() {
         <h3 className="font-heading font-semibold mb-4">Checkout → purchase by device</h3>
         <CompareBars rows={f.byDevice.map(d => ({ segment: d.segment, conversion: d.checkoutToPurchase }))} valueKey="conversion" metricLabel="Checkout→Purchase" />
         <p className="mt-4 text-sm text-muted-foreground">
-          Mobile friction at checkout is the single largest controllable leak. A 10-point lift on mobile checkout-to-purchase scales linearly to ~{mobile ? Math.round((mobile.conversion - desktop?.conversion)) : 0}pp of incremental end-to-end conversion.
+          Mobile checkout is the biggest leak you can actually fix. Get 10 more points out of mobile checkout-to-purchase and you add roughly {mobile ? Math.round((mobile.conversion - desktop?.conversion)) : 0} points to the whole funnel.
         </p>
       </div>
     </div>

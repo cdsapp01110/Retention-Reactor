@@ -1,6 +1,7 @@
 import { Outlet, useNavigate } from 'react-router-dom';
 import Sidebar from '@/components/Sidebar';
 import FilterBar from '@/components/FilterBar';
+import PageMenu from '@/components/PageMenu';
 import { useTheme } from '@/lib/theme';
 import { Sun, Moon } from 'lucide-react';
 
@@ -12,9 +13,12 @@ export default function Layout() {
       <Sidebar onHome={() => navigate('/')} />
       <div className="flex-1 min-w-0 flex flex-col">
         <div className="flex items-center justify-between px-6 py-3 border-b border-border bg-background/60 backdrop-blur-xl">
-          <div className="flex items-center gap-2 text-xs text-muted-foreground">
-            <span className="h-2 w-2 rounded-full bg-chart-3 animate-pulse" />
-            live analytics engine · SQL-driven
+          <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2 text-xs text-muted-foreground">
+              <span className="h-2 w-2 rounded-full bg-chart-3 animate-pulse" />
+              live analytics engine · SQL-driven
+            </div>
+            <PageMenu />
           </div>
           <button
             onClick={toggle}

@@ -19,7 +19,7 @@ export default function RevenueLab() {
       <PageHeader
         eyebrow="Module 03 · Revenue & discount impact"
         title="Revenue & Discount Lab"
-        subtitle="Does discounting buy short-term conversion at the cost of margin and loyalty? Compare full-price vs discount-acquired cohorts across the value chain."
+        subtitle="Does discounting buy short-term sales at the cost of margin and loyalty? Compare full-price and discount-acquired customers across the board."
       />
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -35,8 +35,8 @@ export default function RevenueLab() {
       </div>
 
       <div className="mt-4 rounded-xl border border-chart-4/25 bg-chart-4/5 px-5 py-4 text-sm text-foreground/85">
-        <b className="text-chart-4">Trade-off confirmed:</b> discount-acquired customers convert faster but carry a{' '}
-        <b>{marginDelta}pp lower margin</b> and a <b>{repeatDelta}pp lower repeat rate</b>. Promo-driven volume looks like growth but is often low-quality revenue.
+        <b className="text-chart-4">Here's the trade-off.</b> Discount customers convert faster, but their margin runs{' '}
+        <b>{marginDelta}pp lower</b> and they repeat <b>{repeatDelta}pp less often</b>. It looks like growth. A lot of it isn't.
       </div>
 
       <div className="grid lg:grid-cols-2 gap-5 mt-6">
@@ -70,7 +70,7 @@ export default function RevenueLab() {
               </div>
             ))}
           </div>
-          <p className="mt-4 text-xs text-muted-foreground">Green = margin contribution · Coral = discount depth. Channels with tall coral bars and thin green are shipping revenue at low quality.</p>
+          <p className="mt-4 text-xs text-muted-foreground">Green is margin, coral is discount depth. Channels with tall coral bars and thin green are shipping revenue at low quality.</p>
         </div>
       </div>
     </div>
