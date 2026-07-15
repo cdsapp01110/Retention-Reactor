@@ -1,0 +1,56 @@
+{
+  "name": "Order",
+  "type": "object",
+  "properties": {
+    "order_id": {
+      "type": "string"
+    },
+    "customer_id": {
+      "type": "string"
+    },
+    "order_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "cohort_month": {
+      "type": "string",
+      "format": "date"
+    },
+    "gross_revenue": {
+      "type": "number"
+    },
+    "discount_amount": {
+      "type": "number"
+    },
+    "net_revenue": {
+      "type": "number"
+    },
+    "margin_estimate": {
+      "type": "number"
+    },
+    "channel": {
+      "type": "string"
+    },
+    "device_type": {
+      "type": "string"
+    },
+    "region": {
+      "type": "string"
+    },
+    "is_first_purchase": {
+      "type": "boolean"
+    },
+    "used_discount": {
+      "type": "boolean"
+    },
+    "product_category": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "order_id",
+    "customer_id",
+    "order_date",
+    "gross_revenue"
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "name": "Product",
+  "type": "object",
+  "properties": {
+    "product_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string"
+    },
+    "price": {
+      "type": "number"
+    },
+    "margin_pct": {
+      "type": "number"
+    }
+  },
+  "required": [
+    "product_id",
+    "name",
+    "price"
+  ]
+}

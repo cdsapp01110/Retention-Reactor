@@ -1,0 +1,25 @@
+{
+  "name": "Campaign",
+  "type": "object",
+  "properties": {
+    "campaign_name": {
+      "type": "string"
+    },
+    "channel": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
+    },
+    "cost": {
+      "type": "number"
+    },
+    "is_discounted": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "campaign_name",
+    "channel"
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "name": "Event",
+  "type": "object",
+  "properties": {
+    "event_id": {
+      "type": "string"
+    },
+    "customer_id": {
+      "type": "string"
+    },
+    "session_id": {
+      "type": "string"
+    },
+    "event_time": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "event_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "event_name": {
+      "type": "string"
+    },
+    "channel": {
+      "type": "string"
+    },
+    "device_type": {
+      "type": "string"
+    },
+    "region": {
+      "type": "string"
+    },
+    "campaign": {
+      "type": "string"
+    },
+    "used_discount": {
+      "type": "boolean"
+    },
+    "cohort_month": {
+      "type": "string",
+      "format": "date"
+    }
+  },
+  "required": [
+    "event_id",
+    "event_name",
+    "event_time"
+  ]
+}

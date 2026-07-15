@@ -1,0 +1,63 @@
+{
+  "name": "Customer",
+  "type": "object",
+  "properties": {
+    "customer_id": {
+      "type": "string"
+    },
+    "signup_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "cohort_month": {
+      "type": "string",
+      "format": "date"
+    },
+    "first_order_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "first_purchase_cohort_month": {
+      "type": "string",
+      "format": "date"
+    },
+    "channel": {
+      "type": "string"
+    },
+    "campaign": {
+      "type": "string"
+    },
+    "device_type": {
+      "type": "string"
+    },
+    "country": {
+      "type": "string"
+    },
+    "region": {
+      "type": "string"
+    },
+    "customer_type": {
+      "type": "string"
+    },
+    "used_discount": {
+      "type": "boolean"
+    },
+    "first_order_discount": {
+      "type": "boolean"
+    },
+    "total_orders": {
+      "type": "number"
+    },
+    "total_revenue": {
+      "type": "number"
+    }
+  },
+  "required": [
+    "customer_id",
+    "signup_date",
+    "cohort_month",
+    "channel",
+    "device_type",
+    "region"
+  ]
+}
