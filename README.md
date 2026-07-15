@@ -1,6 +1,5 @@
 <img width="1429" height="898" alt="image" src="https://github.com/user-attachments/assets/8ea866fc-b430-4e2d-b23e-7f6fa414e922" />
 
-
 # Retention Reactor: DTC Analytics Lab
 
 Retention Reactor is an interactive analytics dashboard for a simulated direct-to-consumer subscription business. It helps show where customers drop off, which groups are more likely to buy again, and how discounting affects revenue and repeat purchases.
@@ -40,7 +39,7 @@ The Recommendations page turns the dashboard data into practical suggestions. De
 
 Recommendations: https://retentionreactorsqllabs.com/recommendations
 
-The SQL Logic page explains the thinking behind the numbers. It covers cohort retention, funnel conversion, customer segments, revenue calculations, discount impact, and repeat purchase metrics. The app uses a star-schema-style data model built from customer, product, channel, campaign, region, event, and order data.
+The SQL Logic page explains the thinking behind the numbers. It covers cohort retention, funnel conversion, customer segments, revenue calculations, discount impact, and repeat purchase metrics. The app uses customer, product, channel, campaign, region, event, and order data.
 
 SQL Logic: https://retentionreactorsqllabs.com/sql
 
@@ -52,7 +51,7 @@ For example, you can look at mobile customers from paid search who used a discou
 
 ## Built with
 
-Retention Reactor was built with React, Vite, React Router, TanStack Query, Recharts, Tailwind CSS, Radix UI, Lucide Icons, and Base44.
+Retention Reactor was built with React, Vite, React Router, TanStack Query, Recharts, Tailwind CSS, Radix UI, and Lucide Icons.
 
 ## Why I built it
 
