@@ -22,8 +22,8 @@ export default function Landing() {
       <div className="relative max-w-6xl mx-auto px-4 sm:px-8 pt-10 sm:pt-16 pb-20 sm:pb-24">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
           <h1 className="font-heading text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight leading-[1.02]">
-            Retention, <span className="gradient-text">decoded</span>.<br />
-            Where the funnel <span className="text-muted-foreground">leaks</span>.
+            See what brings customers <span className="gradient-text">back</span>.<br />
+            Find where shoppers <span className="text-muted-foreground">lose interest</span>.
           </h1>
           <p className="mt-6 text-base sm:text-lg text-muted-foreground max-w-2xl leading-relaxed">
             A mock direct-to-consumer subscription brand, built as a portfolio case study. Its simulated customers span North America and skew toward urban professionals between 25 and 44. The dashboard shows which of those buyers return, where the funnel leaks, and how discounts affect revenue.
