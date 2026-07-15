@@ -2,7 +2,7 @@
 
 # Retention Reactor: DTC Analytics Lab
 
-Retention Reactor is an interactive analytics dashboard for a simulated direct-to-consumer subscription business. It helps show where customers drop off, which groups are more likely to buy again, and how discounting affects revenue and repeat purchases.
+Retention Reactor is an interactive analytics dashboard for a simulated direct-to-consumer subscription business. It shows where people lose interest before buying, which customers come back, and whether discounts are actually helping the business make money.
 
 Live app: https://retentionreactorsqllabs.com  
 Repository: https://github.com/cdsapp01110/Retention-Reactor
