@@ -16,9 +16,11 @@ export default function Sidebar({ onHome }) {
   return (
     <aside className="hidden lg:flex w-60 shrink-0 h-screen sticky top-0 border-r border-border bg-sidebar/60 backdrop-blur-xl flex-col">
       <button onClick={onHome} className="flex items-center gap-2.5 px-5 py-5 text-left group">
-        <div className="h-9 w-9 rounded-xl bg-gradient-to-br from-primary to-chart-2 flex items-center justify-center shadow-lg shadow-primary/30">
-          <span className="font-heading font-extrabold text-[13px] leading-none text-white italic tracking-tight">R/R</span>
-        </div>
+        <img
+          src="https://media.base44.com/images/public/6a56e06c4bb777ae2096da5c/ed6c2983a_Logo.jpg"
+          alt="Retention Reactor logo"
+          className="h-9 w-9 rounded-xl object-cover shadow-lg"
+        />
         <div>
           <div className="font-heading font-bold text-foreground leading-tight tracking-tight">Retention Reactor</div>
           <div className="text-[10px] text-muted-foreground uppercase tracking-widest">SQL analytics</div>
